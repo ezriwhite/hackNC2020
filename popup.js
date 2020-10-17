@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
+        e.preventDefault();
         company = document.getElementById('company-name').value
         document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(company)))
 
