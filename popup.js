@@ -33,3 +33,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 }, false);
 
+document.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        company = document.getElementById('company-name').value
+
+        const $root = $("#root");
+        $root.append(`<p>Hello</p>`)
+        // renderCompany(companies.find((c) => c.name === company))
+        if (company == "hello") {
+            var newURL = "http://espn.com";
+            chrome.tabs.create({ url: newURL });
+        } else {
+            var newURL = "http://yahoo.com";
+            chrome.tabs.create({ url: newURL });
+        }
+        /*var newItem = document.createElement("p");
+        newItem.appendChild(document.createTextNode(company))
+        document.getElementById('comp-name').insertBefore(newItem, list.childNodes[0])*/
+
+    }
+});
+
+function renderCompany(company) {
+    return `<h1 id="comp-name">${company.name}</h1>
+        <h2>Ethically Made: ${company.ethical}</h2>
+        <h2>Sustainability Made: ${company.sustainable}</h2>
+        <h2>Minority Owned? ${company.minority_owned}</h2>
+        <button id="checkPage">Read more about the company</button>`;
+};
