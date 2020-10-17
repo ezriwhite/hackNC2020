@@ -1,0 +1,23 @@
+.ratings h1 {
+    font-family: 'Times New Roman', Times, serif;
+    background-color:#cde4b3;
+    color: black;
+    text-align: center;
+}
+
+.ratings h2 {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: blue;
+    color: white;
+}
+
+button {
+    background-color: green;
+    color: yellow;
+    text-align: center;
+}
+
+.ratings {
+    width:300px; 
+    background-color: #9cd8e9;
+}
