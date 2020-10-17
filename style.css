@@ -1,12 +1,14 @@
 .ratings h1 {
-    font-family: 'Times New Roman', Times, serif;
-    background-color:#cde4b3;
+    font-family: 'Verdana', Times, serif;
     color: black;
     text-align: center;
+    padding-top: 10px;
 }
 
 body {
-   background-color: black; 
+   background-color:white; 
+   text-align: center;
+
 }
 
 .ratings h2 {
@@ -18,8 +20,8 @@ body {
 #checkPage {
     background-color: green;
     border: none;
-    color: white;
-    padding: 15px 32px;
+    color: #84bc41	;
+    padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -31,10 +33,10 @@ body {
 }
 
 .staticPages {
-    background-color: yellow;
+    background-color:#bada55;
     border: none;
     color: green;
-    padding: 15px 32px;
+    padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -51,5 +53,7 @@ body {
 } */
 .ratings {
     width:300px; 
-    background-color: #9cd8e9;
+    background-color: #9cd8e9	;
+    padding-bottom: 10px;
+    border-radius: 12px;
 }
