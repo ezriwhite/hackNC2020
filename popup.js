@@ -21,10 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     urlSearchButton.addEventListener('click', function () {
         chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+            document.getElementById('root').innerHTML = ""
             let url = tabs[0].url;
             let target = companies.find((c) => (url.toLowerCase()).includes(c.name.toLowerCase()))
             if (target !== undefined) {
                 document.getElementById('root').appendChild(renderCompany(target))
+                var checkPageButton = document.getElementById('checkPage');
+                checkPageButton.addEventListener('click', function () {
+                // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(document.getElementById('comp-name').innerHTML)))
+                company = document.getElementById('comp-name').innerHTML
+                var newURL = `https://google.com/search?q=${company}+sustainability`;
+                chrome.tabs.create({ url: newURL });
+        }, false);
             }
 
             // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(url)))
@@ -38,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // })
 
     })
+
+    
 
 }, false);
 
@@ -56,13 +66,16 @@ document.addEventListener('keypress', function (e) {
 
         var checkPageButton = document.getElementById('checkPage');
         checkPageButton.addEventListener('click', function () {
+            // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(document.getElementById('comp-name').innerHTML)))
+            company = document.getElementById('comp-name').innerHTML
+            var newURL = `https://google.com/search?q=${company}+sustainability`;
+            chrome.tabs.create({ url: newURL });
+            // chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+            //     let url = tabs[0].url;
 
-            chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-                let url = tabs[0].url;
+            //     chrome.tabs.create({ url: url });
 
-                chrome.tabs.create({ url: url });
-
-            });
+            // });
         }, false);
     }
 });
@@ -73,7 +86,7 @@ function renderCompany(company) {
     <h2>Ethically Made: ${company.ethical}</h2>
     <h2>Sustainability Made: ${company.sustainable}</h2>
     <h2>Minority Owned? ${company.minority_owned}</h2>
-    <button id="checkPage">Read more about the company</button>`;
+    <button id="checkPage" class="inside-ratings">Read more</button>`;
 
     return wrapper;
 };
