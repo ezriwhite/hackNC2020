@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var checkPageButton = document.getElementById('checkPage');
     var sustainabilityButton = document.getElementById('sustainability');
     var ethicsButton = document.getElementById('ethics');
     var minorityOwnedButton = document.getElementById('minority-owned');
@@ -19,19 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var newURL = "https://medium.com/juno-collective/why-helping-minority-owned-businesses-is-still-important-4475403c041b";
         chrome.tabs.create({ url: newURL });
     });
-    checkPageButton.addEventListener('click', function () {
 
-        chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-            let url = tabs[0].url;
-
-            chrome.tabs.create({ url: url });
-
-        });
-        /*var newURL = "http://espn.com";
-        chrome.tabs.create({ url: newURL }, function () {
-
-        });*/
-    }, false);
 }, false);
 
 document.addEventListener('keypress', function (e) {
@@ -46,28 +33,20 @@ document.addEventListener('keypress', function (e) {
             document.getElementById('root').appendChild(renderCompany(target))
         }
 
+        var checkPageButton = document.getElementById('checkPage');
+        checkPageButton.addEventListener('click', function () {
 
-        // const $root = $("#root");
-        // $root.append(`<p>Hello</p>`)
-        // renderCompany(companies.find((c) => c.name === company))
-        /*if (company == "hello") {
-            var newURL = "http://espn.com";
-            chrome.tabs.create({ url: newURL });
-        } else {
-            var newURL = "http://yahoo.com";
-            chrome.tabs.create({ url: newURL });
-        }*/
-        /*var newItem = document.createElement("p");
-        newItem.appendChild(document.createTextNode(company))
-        document.getElementById('comp-name').insertBefore(newItem, list.childNodes[0])*/
+            chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+                let url = tabs[0].url;
 
+                chrome.tabs.create({ url: url });
+
+            });
+        }, false);
     }
 });
 
 function renderCompany(company) {
-    /*let outer_div = document.createElement("DIV"); 
-    let comp_name = document.createElement("H1");
-    let ethics = document.createElement("H2")*/
     let wrapper = document.createElement('div')
     wrapper.innerHTML = `<h1 id="comp-name">${company.name}</h1>
     <h2>Ethically Made: ${company.ethical}</h2>
