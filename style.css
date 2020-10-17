@@ -11,12 +11,17 @@
     color: white;
 }
 
-button {
+#checkPage {
     background-color: green;
     color: yellow;
     text-align: center;
 }
 
+.staticPages {
+    background-color: yellow;
+    color: green;
+    text-align: center;
+}
 .ratings {
     width:300px; 
     background-color: #9cd8e9;
