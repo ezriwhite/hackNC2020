@@ -38,7 +38,13 @@ document.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         e.preventDefault();
         company = document.getElementById('company-name').value
-        document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(company)))
+        var target = companies.find((c) => company === c.name)
+        if (target === undefined) {
+            target = "Company not found."
+        } else {
+            target = target.name
+        }
+        document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(target)))
 
         // const $root = $("#root");
         // $root.append(`<p>Hello</p>`)
