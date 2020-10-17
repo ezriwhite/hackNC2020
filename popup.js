@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
+        document.getElementById('root').innerHTML = ""
         e.preventDefault();
         company = document.getElementById('company-name').value
         var target = companies.find((c) => company === c.name)

@@ -10,7 +10,7 @@ const companies = [
         sustainable: 10,
         minority_owned: false
     }, {
-        name: "Forver 21",
+        name: "Forever 21",
         ethical: 2,
         sustainable: 3,
         minority_owned: false
