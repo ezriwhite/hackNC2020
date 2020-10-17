@@ -37,8 +37,8 @@ document.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         company = document.getElementById('company-name').value
 
-        const $root = $("#root");
-        $root.append(`<p>Hello</p>`)
+        // const $root = $("#root");
+        // $root.append(`<p>Hello</p>`)
         // renderCompany(companies.find((c) => c.name === company))
         if (company == "hello") {
             var newURL = "http://espn.com";
