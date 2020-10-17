@@ -41,10 +41,11 @@ document.addEventListener('keypress', function (e) {
         var target = companies.find((c) => company === c.name)
         if (target === undefined) {
             target = "Company not found."
+            document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(target)))
         } else {
-            target = target.name
+            document.getElementById('root').appendChild(renderCompany(target))
         }
-        document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(target)))
+
 
         // const $root = $("#root");
         // $root.append(`<p>Hello</p>`)
@@ -64,9 +65,15 @@ document.addEventListener('keypress', function (e) {
 });
 
 function renderCompany(company) {
-    return `<h1 id="comp-name">${company.name}</h1>
-        <h2>Ethically Made: ${company.ethical}</h2>
-        <h2>Sustainability Made: ${company.sustainable}</h2>
-        <h2>Minority Owned? ${company.minority_owned}</h2>
-        <button id="checkPage">Read more about the company</button>`;
+    /*let outer_div = document.createElement("DIV"); 
+    let comp_name = document.createElement("H1");
+    let ethics = document.createElement("H2")*/
+    let wrapper = document.createElement('div')
+    wrapper.innerHTML = `<h1 id="comp-name">${company.name}</h1>
+    <h2>Ethically Made: ${company.ethical}</h2>
+    <h2>Sustainability Made: ${company.sustainable}</h2>
+    <h2>Minority Owned? ${company.minority_owned}</h2>
+    <button id="checkPage">Read more about the company</button>`;
+
+    return wrapper;
 };
