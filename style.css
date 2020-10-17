@@ -3,6 +3,7 @@
     color: black;
     text-align: center;
     padding-top: 10px;
+    display: inline;
 }
 
 body {
@@ -11,15 +12,30 @@ body {
 
 }
 
+img{
+    display:inline;
+    width:35px;
+    height: 35px;
+}
+
 .ratings h2 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Verdana', Times, serif;
     color: white;
 }
 
-.inside-ratings {
-    background-color:green;
+input[type=text] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
     border: none;
-    color: #bdff6d	;
+
+  }
+
+.inside-ratings {
+    background-color:#4C9A2A;
+    border: none;
+    color:white	;
     padding: 15px 15px;
     text-align: center;
     text-decoration: none;
@@ -28,7 +44,7 @@ body {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
-    width: 250px; 
+    width: 200px; 
     height: 50px; 
 }
 
@@ -46,10 +62,10 @@ body {
     cursor: pointer;
     border-radius: 12px;
     width: 100%
-
 }
+
 #comp-name {
-    color: rgb(60, 92, 60);
+    color: black;
     text-align: center;
 
 }
