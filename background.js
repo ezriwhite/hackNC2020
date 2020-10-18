@@ -2,6 +2,14 @@ console.log("Atleast reached background.js")
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
 
+        var newURL = `https://google.com/search?q=${request.company}+sustainability`;
+        chrome.tabs.create({ url: newURL, active: false }, (tab) => {
+            chrome.tabs.executeScript(tab.id, {
+                code: "console.log('asdf');"
+            })
+        });
+
+
         function modifyDOM() {
             //You can play with your DOM here or check URL against your regex
             console.log('Tab script:');
