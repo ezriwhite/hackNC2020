@@ -2,18 +2,13 @@ console.log("Atleast reached background.js")
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
 
-        var newURL = `https://google.com/search?q=${request.company}+sustainability`;
+        /*var newURL = `https://google.com/search?q=${request.company}+sustainability`;
         chrome.tabs.create({ url: newURL, active: false }, (tab) => {
-            et = new dom.window.KeyboardEvent('keydown', { key: "Tab" }); // Tab key
-            for (let i = 0; i < 18; i++) {
-                tab.dispatchEvent(et)
-            }
-            ee = new dom.window.KeyboardEvent('keydown', { key: "Enter" }); // Tab key
-            tab.dispatchEvent(ee)
+
             chrome.tabs.executeScript(tab.id, {
                 code: "console.log('asdf');"
             })
-        });
+        });*/
 
 
         /*function modifyDOM() {
@@ -21,14 +16,14 @@ chrome.runtime.onMessage.addListener(
             console.log('Tab script:');
             //return document.getElementById("search").innerHTML;
             return document.body.innerHTML;
-        }
+        }*/
 
-
-        var newURL = `https://google.com/search?q=${request.company}+sustainability`;
-        chrome.tabs.create({ url: newURL, active: false }, (tab) => {
+        var URL = `https://duckduckgo.com/?q=!ducky+${request.company}+sustainability`
+        // var newURL = `https://google.com/search?q=${request.company}+sustainability&btnI`;
+        chrome.tabs.create({ url: URL, active: false }, (tab) => {
             chrome.tabs.executeScript(tab.id, { file: "inject.js" })
 
-        })*/
+        })
 
         // chrome.tabs.executeScript({ code: "console.log('hello')" })
 
