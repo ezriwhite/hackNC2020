@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Company Check Plugin",
+    "name": "Sustaina-Scan",
     "description": "This extension will analyze a company's ethical and sustainability choices.",
     "version": "1.0",
     "background": {
