@@ -32,8 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     company = document.getElementById('comp-name').innerHTML
                     // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(getResults(company, 0))))
-                    var newURL = `https://google.com/search?q=${company}+sustainability`;
-                    chrome.tabs.create({ url: newURL });
+                    chrome.runtime.sendMessage({
+                        company: company,
+                    }, function (response) {
+                        //Alert the message
+                        console.log("The response from the background page: " + response.response);//You have to choose which part of the response you want to display ie. response.response
+                    });
                 }, false);
             } else {
                 document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode("Website not found. Try our search tool instead.")))

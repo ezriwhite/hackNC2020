@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener(
 
         var URL = `https://duckduckgo.com/?q=!ducky+${request.company}+sustainability`
         // var newURL = `https://google.com/search?q=${request.company}+sustainability&btnI`;
-        chrome.tabs.create({ url: URL, active: false }, (tab) => {
+        chrome.tabs.create({ url: URL }, (tab) => {
             chrome.tabs.executeScript(tab.id, { file: "inject.js" })
 
         })
