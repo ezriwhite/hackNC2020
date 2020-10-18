@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('root').appendChild(renderCompany(target))
                 var checkPageButton = document.getElementById('checkPage');
                 checkPageButton.addEventListener('click', function () {
-                // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(document.getElementById('comp-name').innerHTML)))
-                
+                    // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(document.getElementById('comp-name').innerHTML)))
+
                     company = document.getElementById('comp-name').innerHTML
-                // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(getResults(company, 0))))
+                    // document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(getResults(company, 0))))
                     var newURL = `https://google.com/search?q=${company}+sustainability`;
                     chrome.tabs.create({ url: newURL });
                 }, false);
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })
 
-    
+
 
 }, false);
 
@@ -71,22 +71,21 @@ document.addEventListener('keypress', function (e) {
         var checkPageButton = document.getElementById('checkPage');
         checkPageButton.addEventListener('click', function () {
             company = document.getElementById('comp-name').innerHTML
-            //document.getElementById('root').appendChild(document.createElement("P").appendChild(document.createTextNode(getResults(company, 0))))
-            var newURL = `https://google.com/search?q=${company}+sustainability`;
-            chrome.tabs.create({ url: newURL });
-            // chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-            //     let url = tabs[0].url;
-
-            //     chrome.tabs.create({ url: url });
-
-            // });
+            console.log("hi")
+            chrome.runtime.sendMessage({
+                company: company,
+            }, function (response) {
+                //Alert the message
+                alert("The response from the background page: " + response.response);//You have to choose which part of the response you want to display ie. response.response
+            });
+            // var newURL = `https://google.com/search?q=${company}+sustainability`;
+            // chrome.tabs.create({ url: newURL });
         }, false);
     }
 });
 
-function getResults(){
-    gapi.load(libraries, callbackOrConfig)
-    gapi.client.init("AIzaSyDKocCJBQQ9V5tjit1onjxIehOGZCIIWd0")
+function getResults() {
+
 }
 
 function renderCompany(company) {
@@ -100,4 +99,3 @@ function renderCompany(company) {
 };
 
 
-// API key: AIzaSyDKocCJBQQ9V5tjit1onjxIehOGZCIIWd0
