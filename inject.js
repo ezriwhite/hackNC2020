@@ -1,3 +1,3 @@
 console.log("madeit")
+console.log(document.getElementById('g'))
 
-chrome.tabs.create({ url: "https://20f.comp110.com/" });

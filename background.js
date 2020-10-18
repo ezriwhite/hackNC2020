@@ -4,13 +4,19 @@ chrome.runtime.onMessage.addListener(
 
         var newURL = `https://google.com/search?q=${request.company}+sustainability`;
         chrome.tabs.create({ url: newURL, active: false }, (tab) => {
+            et = new dom.window.KeyboardEvent('keydown', { key: "Tab" }); // Tab key
+            for (let i = 0; i < 18; i++) {
+                tab.dispatchEvent(et)
+            }
+            ee = new dom.window.KeyboardEvent('keydown', { key: "Enter" }); // Tab key
+            tab.dispatchEvent(ee)
             chrome.tabs.executeScript(tab.id, {
                 code: "console.log('asdf');"
             })
         });
 
 
-        function modifyDOM() {
+        /*function modifyDOM() {
             //You can play with your DOM here or check URL against your regex
             console.log('Tab script:');
             //return document.getElementById("search").innerHTML;
@@ -22,7 +28,7 @@ chrome.runtime.onMessage.addListener(
         chrome.tabs.create({ url: newURL, active: false }, (tab) => {
             chrome.tabs.executeScript(tab.id, { file: "inject.js" })
 
-        })
+        })*/
 
         // chrome.tabs.executeScript({ code: "console.log('hello')" })
 
