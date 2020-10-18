@@ -16,11 +16,14 @@ img{
     display:inline;
     width:35px;
     height: 35px;
+    padding-top: 15px;
 }
 
 .ratings h2 {
-    font-family: 'Verdana', Times, serif;
+    font: 'Verdana';
     color: white;
+    font-size: 15px;
+
 }
 
 input[type=text] {
