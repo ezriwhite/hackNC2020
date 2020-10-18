@@ -3,18 +3,27 @@
     "name": "Company Check Plugin",
     "description": "This extension will analyze a company's ethical and sustainability choices.",
     "version": "1.0",
-    "browser_action": {
-        "default_icon": "icon.png",
-        "default_popup": "popup.html"
-    },
     "background": {
         "scripts": [
             "background.js"
         ],
         "persistent": false
     },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
     "permissions": [
-        "activeTab",
         "tabs"
     ]
 }

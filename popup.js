@@ -76,7 +76,7 @@ document.addEventListener('keypress', function (e) {
                 company: company,
             }, function (response) {
                 //Alert the message
-                alert("The response from the background page: " + response.response);//You have to choose which part of the response you want to display ie. response.response
+                console.log("The response from the background page: " + response.response);//You have to choose which part of the response you want to display ie. response.response
             });
             // var newURL = `https://google.com/search?q=${company}+sustainability`;
             // chrome.tabs.create({ url: newURL });
