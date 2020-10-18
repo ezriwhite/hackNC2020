@@ -43,9 +43,9 @@ input[type=text] {
     box-sizing: border-box;
     border: none;
     border-radius: 12px;
-
   }
 
+/* get curernt site button */
 .inside-ratings {
     background-color:#4C9A2A;
     border: none;
@@ -92,6 +92,8 @@ input[type=text] {
     cursor: pointer;
     border-radius: 12px;
     width: 100%
+    /* box-shadow: 0 15px #999; */
+
 }
 
 #comp-name {
@@ -105,8 +107,16 @@ h2 {
     text-align: center;
 
 }
-.staticPages.button hover {
-    background-color: yellow;
+.staticPages:hover {
+    background-color: #7095a0;
+}
+
+.inside-ratings:hover {
+    background-color: #2c5819;
+}
+
+.readMore:hover {
+    background-color: #fc7c13;
 }
 
 .ratings {
