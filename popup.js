@@ -95,8 +95,7 @@ function renderCompany(company) {
     <h2>Ethically Made: ${company.ethical}</h2>
     <h2>Sustainability Made: ${company.sustainable}</h2>
     <h2>Minority Owned? ${company.minority_owned}</h2>
-    <button id="checkPage" class="inside-ratings">Read more</button>`;
-
+    <button id="checkPage" class="readMore">Read more</button>`;
     return wrapper;
 };
 

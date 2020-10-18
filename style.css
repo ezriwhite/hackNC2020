@@ -3,13 +3,23 @@
     color: black;
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 10px; 
     display: inline;
+
 }
 
 body {
    background-color:white; 
    text-align: center;
 
+}
+label{
+    color: grey;
+}
+
+p {
+    display: block;
+    margin: 3px; 
 }
 
 img{
@@ -32,11 +42,28 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
+    border-radius: 12px;
 
   }
 
 .inside-ratings {
     background-color:#4C9A2A;
+    border: none;
+    color:white	;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 200px; 
+    height: 50px; 
+}
+
+.readMore{
+    background-color:#ff953d;
     border: none;
     color:white	;
     padding: 15px 15px;
@@ -70,6 +97,8 @@ input[type=text] {
 #comp-name {
     color: black;
     text-align: center;
+    margin: 10px; 
+    padding-top: 15px;
 
 }
 h2 {
@@ -83,6 +112,6 @@ h2 {
 .ratings {
     width:300px; 
     background-color: #9cd8e9	;
-    padding-bottom: 10px;
     border-radius: 12px;
+    padding-bottom: 15px;
 }
